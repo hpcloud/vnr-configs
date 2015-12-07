@@ -1,0 +1,2 @@
+from 192.168.0.0/19 table br1
+from all to 192.168.0.0/19 dev eth1 table br1

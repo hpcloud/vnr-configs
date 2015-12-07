@@ -1,0 +1,2 @@
+default table br1 via 192.168.31.254
+192.168.0.0/19 via 192.168.31.254 dev eth1 table br1

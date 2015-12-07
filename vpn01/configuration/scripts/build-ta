@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# Build TLS authentication key for server side
+# of an SSL/TLS connection.
+#
+source /usr/share/openvpn/easy-rsa/2.0/vars
+
+if test $KEY_DIR; then
+    openvpn --genkey --secret ${KEY_DIR}/ta.key
+else
+    echo you must define KEY_DIR
+fi

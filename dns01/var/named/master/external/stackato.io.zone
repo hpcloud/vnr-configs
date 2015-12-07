@@ -1,0 +1,15 @@
+$ORIGIN stackato.io.
+$TTL	86400
+@	IN	SOA	ns1.stackato.com.	root	(
+				2015101000	; serial
+				3H		; refresh
+				15		; retry
+				1w		; expire
+				3h		; minimum
+				)
+	IN	NS		ns1.stackato.com.
+	IN	NS		ns2.stackato.com.
+
+my	IN	A	127.0.0.1
+*.my	IN	A	127.0.0.1
+www	IN	A	204.244.102.6

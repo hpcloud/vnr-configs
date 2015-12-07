@@ -1,0 +1,2 @@
+from 192.168.0.0/19 table 7783344
+from all to 192.168.0.0/19 dev br1 table 7783344

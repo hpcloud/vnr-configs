@@ -1,0 +1,9 @@
+# This network interface seems to function poorly
+# and should not be used.
+DEVICE=eth0
+HWADDR=00:25:90:60:54:CA
+TYPE=Ethernet
+UUID=5e405477-2e7d-4bc5-ae1a-8ca21b4d457b
+ONBOOT=no
+NM_CONTROLLED=no
+BOOTPROTO=dhcp

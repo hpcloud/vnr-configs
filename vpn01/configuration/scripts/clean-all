@@ -1,0 +1,20 @@
+#!/bin/sh
+
+#
+# Initialize the $KEY_DIR directory.
+# Note that this script does a
+# rm -rf on $KEY_DIR so be careful!
+#
+
+source /usr/share/openvpn/easy-rsa/2.0/vars
+
+if test $KEY_DIR; then
+    rm -rf $KEY_DIR
+    mkdir $KEY_DIR && \
+    chmod 0750 $KEY_DIR && \
+    chown root:openvpn $KEY_DIR && \
+    touch ${KEY_DIR}/index.txt && \
+    echo 01 >${KEY_DIR}/serial
+else
+    echo you must define KEY_DIR
+fi

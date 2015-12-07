@@ -1,0 +1,5 @@
+MAILTO=george.hicks@hpe.com
+
+10 0,6,18 * * *	root	/data/scripts/dbbackup.sh
+0 23 * * *	root	/data/scripts/rotate_sql.sh
+

@@ -1,0 +1,17 @@
+$ORIGIN	stacka.to.
+$TTL	86400
+@	IN	SOA	ns1.stackato.com. root	(
+				2015103100	; serial
+				600		; refresh
+				300		; retry
+				600		; expire
+				900		; minimum
+				)
+	IN	NS	ns1.stackato.com.
+	IN	NS	ns2.stackato.com.
+	IN	A	15.126.132.139
+
+ports		IN	A	15.126.208.111
+staging		IN	A	15.125.70.248
+*.staging	IN	CNAME	staging
+*		IN	CNAME	stacka.to.

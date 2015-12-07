@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#
+# Build a revocation list
+#
+source /usr/share/openvpn/easy-rsa/2.0/vars
+export KEY_CN=ca
+export KEY_NAME=ca
+
+if test $KEY_DIR; then
+    cd $KEY_DIR && \
+    openssl ca -gencrl -out ca.crl -config $KEY_CONFIG && \
+    chmod 0644 ca.crl
+else
+    echo you must define KEY_DIR
+fi

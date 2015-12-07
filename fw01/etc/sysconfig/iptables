@@ -1,0 +1,136 @@
+# GHII Sept 2015
+
+*mangle
+:PREROUTING ACCEPT [583:107650]
+:INPUT ACCEPT [172:28285]
+:FORWARD ACCEPT [407:79193]
+:OUTPUT ACCEPT [169:23509]
+:POSTROUTING ACCEPT [575:102392]
+
+# example
+# -A PREROUTING -d 204.244.102.4 -p udp -m udp --dport domain -m state --state NEW -j MARK --set-mark 1
+
+COMMIT
+
+
+*nat
+:PREROUTING ACCEPT [12:1349]
+:POSTROUTING ACCEPT [5:332]
+:OUTPUT ACCEPT [0:0]
+
+#Outbound SMTP traffic goes out on a different source IP. Needed?
+#-A POSTROUTING -o eth1 -p tcp -m multiport --dports smtp,smtps -j SNAT --to-source 204.244.102.3
+
+-A POSTROUTING -o eth1 -j MASQUERADE
+
+# clientftp.stackato.com
+-A PREROUTING -d 204.244.11.130 -p tcp --dport ssh -m state --state NEW -j DNAT --to-destination 192.168.68.25
+-A PREROUTING -d 204.244.11.130 -p tcp --dport ftp -m state --state NEW -j DNAT --to-destination 192.168.68.25
+-A PREROUTING -d 204.244.11.130 -p tcp --dport 49152:65534 -m state --state NEW -j DNAT --to-destination 192.168.68.25
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.25 -p tcp --dport ssh -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.25 -p tcp --dport ftp -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.25 -p tcp --dport 49152:65534 -j SNAT --to-source 192.168.253.254
+
+# clientupload.stackato.com
+-A PREROUTING -d 204.244.11.130 -p tcp --dport https -m state --state NEW -j DNAT --to-destination 192.168.68.26
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.26 -p tcp --dport https -j SNAT --to-source 192.168.253.254
+
+# dad.stackato.com (github mirrors)
+-A PREROUTING -d 204.244.11.131 -p tcp -m multiport --dports http,https -m state --state NEW -j DNAT --to-destination 192.168.69.181
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.69.181 -p tcp -m multiport --dports http,https -j SNAT --to-source 192.168.253.254
+
+# flux.stackato.com (gems)
+-A PREROUTING -d 204.244.11.130 -p tcp --dport http -m state --state NEW -j DNAT --to-destination 192.168.69.83
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.69.83 -p tcp --dport http -j SNAT --to-source 192.168.253.254
+
+# jenkins.stackato.com
+# -A PREROUTING -d 204.244.102.43 -p tcp --dport http -m state --state NEW -j DNAT --to-destination 192.168.69.186
+# -A POSTROUTING --src 192.168.0.0/16 -d 192.168.69.186 -p tcp --dport http -j SNAT --to-source 192.168.253.254
+
+# mp.stackato.com
+-A PREROUTING -d 204.244.11.132 -p tcp -m multiport --dports http,https -m state --state NEW -j DNAT --to-destination 192.168.10.15
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.10.15 -p tcp -m multiport --dports http,https -j SNAT --to-source 192.168.253.254
+
+# ns1.stackato.com, ns2.stackato.com
+-A PREROUTING -d 204.244.11.130 -p tcp -m multiport --dports 53,953 -m state --state NEW -j DNAT --to-destination 192.168.68.3
+-A PREROUTING -d 204.244.11.130 -p udp -m multiport --dports 53,953 -m state --state NEW -j DNAT --to-destination 192.168.68.3
+-A PREROUTING -d 204.244.11.131 -p tcp -m multiport --dports 53,953 -m state --state NEW -j DNAT --to-destination 192.168.68.4
+-A PREROUTING -d 204.244.11.131 -p udp -m multiport --dports 53,953 -m state --state NEW -j DNAT --to-destination 192.168.68.4
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.3 -p tcp -m multiport --dports 53,953 -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.3 -p udp -m multiport --dports 53,953 -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.4 -p tcp -m multiport --dports 53,953 -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.4 -p udp -m multiport --dports 53,953 -j SNAT --to-source 192.168.253.254
+
+# otrs.stackato.com
+#-A PREROUTING -d 204.244.11.133 -p tcp -m multiport --dports http,https -m state --state NEW -j DNAT --to-destination 192.168.68.20
+#-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.20 -p tcp -m multiport --dports http,https -j SNAT --to-source 192.168.253.254
+
+# vpn01.stackato.com
+-A PREROUTING -d 204.244.11.130 -p tcp --dport 1194 -m state --state NEW -j DNAT --to-destination 192.168.68.6
+-A PREROUTING -d 204.244.11.130 -p udp --dport 1194 -m state --state NEW -j DNAT --to-destination 192.168.68.6
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.6 -p tcp --dport 1194 -j SNAT --to-source 192.168.253.254
+-A POSTROUTING --src 192.168.0.0/16 -d 192.168.68.6 -p udp --dport 1194 -j SNAT --to-source 192.168.253.254
+
+COMMIT
+
+
+*filter
+:FORWARD ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Default accept existing connections
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# icmp limiters
+-A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/s --limit-burst 5
+-A INPUT -p icmp -j ACCEPT
+
+# smtp to ?
+#-A INPUT -d 204.244.102.3 -p tcp --dport smtp -m state --state NEW -j ACCEPT
+#-A INPUT -d 192.168.232.200 -s 192.168.0.0/16 -p tcp --dport smtp -m state --state NEW -j ACCEPT
+
+# External sites to drop (abusers, ddosers)
+-A INPUT -s 69.171.224.0/24 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 69.63.189.0/24 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 66.220.149.0/24 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 12.15.90.61 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 218.104.71.166 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 162.223.89.99 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 219.93.61.13 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 117.217.182.31 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 125.164.227.4 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 220.181.157.164 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 60.176.162.89 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 115.78.238.222 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 113.169.62.107 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.10 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.11 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.12 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.13 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.14 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.15 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.16 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.17 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 203.113.188.18 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 121.2.219.220 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 208.91.198.52 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 217.10.52.10 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 151.18.161.148 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 91.239.104.193 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 92.42.92.27 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 128.74.140.72 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 213.230.78.89 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 87.253.132.0/24 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 79.142.67.109 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 114.111.35.0/24 -p tcp -j REJECT --reject-with tcp-reset
+-A INPUT -s 89.189.191.31 -p tcp -j REJECT --reject-with tcp-reset
+
+# Acceptable connections
+-A INPUT -i eth0 -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+# If we get to here, log and drop
+-A INPUT -i eth1 -j LOG --log-prefix "iptables: "
+-A INPUT -i eth1 -j DROP
+
+COMMIT

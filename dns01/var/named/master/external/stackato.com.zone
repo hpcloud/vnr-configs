@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015120301	; serial
+				2015120700	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -9,69 +9,37 @@ $TTL	86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	IN	A	204.244.102.6
+	300	IN	CNAME	stackato.com.s3-website-us-west-2.amazonaws.com.
 
-4clojure		IN	A	204.244.102.44
 aok			IN	CNAME	api
 api			IN	A	15.125.91.96
 beta			IN	CNAME	unbouncepages.com.
-bottle-currency		IN	A	204.244.102.44
-box31			IN	A	204.244.102.3
-buzz			IN	A	204.244.102.44
-catalyst-tut3		IN	A	204.244.102.44
-clientftp		IN	A	204.244.102.51
-clientupload		IN	A	204.244.102.51
-clojuresphere		IN	A	204.244.102.44
-compare			IN	A	204.244.102.44
+clientftp	300	IN	A	204.244.102.51
+clientupload	300	IN	A	204.244.102.51
 component-images	IN	A	15.125.95.221
 component-images-ci	IN	A	15.125.101.109
 component-images-qa	IN	A	15.125.86.115
 demo			IN	A	54.245.2.174
 *.demo			IN	CNAME	demo
-django-gtd		IN	A	204.244.102.44
 docker			IN	A	15.126.241.145
-docker-external		IN	A	204.244.102.53
 docker-internal		IN	A	15.125.88.29
 docs			IN	CNAME	api
 downloads		IN	CNAME	api
-etherpad		IN	A	204.244.102.44
-gems			IN	A	204.244.102.48
+gems		300	IN	A	204.244.102.48
 get			IN	CNAME	api
 getstarted		IN	CNAME	unbouncepages.com.
-github-notify		IN	A	204.244.102.34
-hello-java		IN	A	204.244.102.44
-hello-spring-mysql	IN	A	204.244.102.44
-hp			IN	A	204.244.102.43
-*.hp			IN	CNAME	hp
-hummingbird		IN	A	204.244.102.44
+github-notify	300	IN	A	204.244.102.34
 logs			IN	CNAME	api
-mojo-helloworld		IN	A	204.244.102.44
-mojo-photobooth		IN	A	204.244.102.44
-multisweeper		IN	A	204.244.102.44
-node-chat		IN	A	204.244.102.44
-node-circles		IN	A	204.244.102.44
-node-env		IN	A	204.244.102.44
 npm			IN	A	15.125.88.210
-mp			IN	A	204.244.102.52
+mp		300	IN	A	204.244.102.52
 *.mp			IN	CNAME	mp
 ns1			IN	A	204.244.102.50
 ns2			IN	A	204.244.102.51
 opboard			IN	CNAME	api
 openproject		IN	CNAME	api
 otrs		300	IN	A	52.32.120.164
-pet-catalog		IN	A	204.244.102.44
-pet-clinic		IN	A	204.244.102.44
-pinax-social		IN	A	204.244.102.44
 pkg			IN	A	15.126.222.243
-pkg-internal		IN	A	204.244.102.26
-rails-prezbuzz		IN	A	204.244.102.44
-rubric			IN	A	204.244.102.44
-scaling			IN	A	204.244.102.44
-sinatra-rabbitmq	IN	A	204.244.102.44
-tornado-chat		IN	A	204.244.102.44
 upgrade			IN	CNAME	component-images
 upgrade-internal	IN	A	15.126.232.14
-vmworld			IN	A	204.244.102.44
-wordpress		IN	A	204.244.102.44
 welcome			IN	CNAME	api
-www			IN	A	204.244.102.6
+www			IN	CNAME	stackato.com.

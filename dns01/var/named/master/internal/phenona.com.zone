@@ -1,7 +1,7 @@
 $ORIGIN phenona.com.
 $TTL 86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015101000	; serial
+				2015120700	; serial
 				3600		; refresh (1 hour)
 				1800		; retry (30 minutes)
 				3600		; expire (1 hour)
@@ -9,7 +9,7 @@ $TTL 86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	IN	A	204.244.102.6
+	300	IN	CNAME	phenona.com.s3-website-us-west-2.amazonaws.com.
 
 calendar	IN	CNAME	ghs.google.com.
 docs		IN	CNAME	ghs.google.com.

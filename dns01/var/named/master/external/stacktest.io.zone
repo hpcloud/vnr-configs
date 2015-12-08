@@ -1,7 +1,7 @@
 $ORIGIN	stacktest.io.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015103100      ; serial
+				2015120800      ; serial
 				600		; refresh
 				300		; retry
 				600		; expire
@@ -23,7 +23,7 @@ helion		IN	A	15.126.217.24
 *.lorned	IN	CNAME	lorned
 lytx		IN	A	15.125.106.4
 *.lytx		IN	CNAME	lytx
-marky		IN	A	15.125.109.183
+marky		IN	A	15.125.80.184
 *.marky		IN	CNAME	marky
 paas		IN	A	15.126.242.2
 *.paas		IN	CNAME	paas

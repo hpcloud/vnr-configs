@@ -9,7 +9,7 @@ $TTL 86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	300	IN	CNAME	phenona.com.s3-website-us-west-2.amazonaws.com.
+	300	IN	A	54.231.168.199
 
 calendar	IN	CNAME	ghs.google.com.
 docs		IN	CNAME	ghs.google.com.

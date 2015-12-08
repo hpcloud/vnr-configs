@@ -9,6 +9,6 @@ $TTL	86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	300	IN	CNAME	usepaas.com.s3-website-us-west-2.amazonaws.com.
+	300	IN	A	54.231.168.123
 
 www	IN	CNAME	usepaas.com.

@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015120700	; serial
+				2015122200	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -9,13 +9,14 @@ $TTL	86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	300	IN	A	54.231.184.219
+	IN	A	54.231.184.219
+	IN	TXT	"v=spf1 ip4:52.32.120.164 include:_spf.google.com ~all"
 
 aok			IN	CNAME	api
 api			IN	A	15.125.91.96
 beta			IN	CNAME	unbouncepages.com.
-clientftp	300	IN	A	204.244.102.51
-clientupload	300	IN	A	204.244.102.51
+clientftp		IN	A	204.244.11.130
+clientupload		IN	A	204.244.11.130
 component-images	IN	A	15.125.95.221
 component-images-ci	IN	A	15.125.101.109
 component-images-qa	IN	A	15.125.86.115
@@ -25,19 +26,19 @@ docker			IN	A	15.126.241.145
 docker-internal		IN	A	15.125.88.29
 docs			IN	CNAME	api
 downloads		IN	CNAME	api
-gems		300	IN	A	204.244.102.48
+gems			IN	A	204.244.11.130
 get			IN	CNAME	api
 getstarted		IN	CNAME	unbouncepages.com.
-github-notify	300	IN	A	204.244.102.34
+github-notify		IN	A	204.244.11.131
 logs			IN	CNAME	api
-npm			IN	A	15.125.88.210
-mp		300	IN	A	204.244.102.52
+mp			IN	A	204.244.11.132
 *.mp			IN	CNAME	mp
-ns1			IN	A	204.244.102.50
-ns2			IN	A	204.244.102.51
+npm			IN	A	15.125.88.210
+ns1			IN	A	204.244.11.130
+ns2			IN	A	204.244.11.131
 opboard			IN	CNAME	api
 openproject		IN	CNAME	api
-otrs		300	IN	A	52.32.120.164
+otrs			IN	A	52.32.120.164
 pkg			IN	A	15.126.222.243
 upgrade			IN	CNAME	component-images
 upgrade-internal	IN	A	15.126.232.14

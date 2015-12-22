@@ -1,7 +1,7 @@
 $ORIGIN	usepaas.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015120700	; serial
+				2015122200	; serial
 				3600		; refresh (1 hour)
 				1800		; retry (30 minutes)
 				3600		; expire (1 hour)
@@ -9,6 +9,6 @@ $TTL	86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	300	IN	A	54.231.168.123
+	IN	A	54.231.168.123
 
 www	IN	CNAME	usepaas.com.

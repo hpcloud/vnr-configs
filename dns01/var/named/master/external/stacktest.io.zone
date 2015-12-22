@@ -1,7 +1,7 @@
 $ORIGIN	stacktest.io.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015120800      ; serial
+				2015122200      ; serial
 				600		; refresh
 				300		; retry
 				600		; expire

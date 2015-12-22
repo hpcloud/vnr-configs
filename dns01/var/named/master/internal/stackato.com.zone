@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015120700	; serial
+				2015122200	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -9,7 +9,8 @@ $TTL	86400
 				)
 	IN	NS	ns1.stackato.com.
 	IN	NS	ns2.stackato.com.
-	300	IN	A	54.231.184.219
+	IN	A	54.231.184.219
+	IN	TXT	"v=spf1 ip4:52.32.120.164 include:_spf.google.com ~all"
 
 addons				IN	CNAME	paas
 addons-nightly			IN	CNAME	paas
@@ -18,20 +19,13 @@ antelope			IN	A	192.168.68.193
 aok				IN	CNAME	api
 ape				IN	A	192.168.68.112
 api				IN	A	15.125.91.96
-api.stackato.cpbm-jw		IN	A	15.185.95.52
 aszero1				IN	A	192.168.0.3
 aszero2				IN	A	192.168.0.5
-babar				IN	A	192.168.69.9
 backups01			IN	A	192.168.68.27
-bargleflub			IN	A	15.125.91.96
-bertha				IN	A	192.168.69.86
 beta				IN	CNAME	unbouncepages.com.
-bowie				IN	A	192.168.69.226
 bzr				IN	CNAME	gitolite
-casablanca			IN	A	192.168.69.152
-cfv2				IN	A	54.225.81.72
-*.cfv2				IN	CNAME	cfv2
 circuit				IN	A	192.168.10.6
+cisco2960			IN	A	192.168.69.7
 clientftp			IN	A	192.168.68.25
 clientupload			IN	A	192.168.68.26
 cluck				IN	A	192.168.68.79
@@ -39,9 +33,7 @@ cme				IN	A	10.10.20.125
 cmrouter			IN	A	192.168.69.250
 component-images		IN	A	15.125.95.221
 component-images-ci		IN	A	15.125.101.109
-component-images-internal	IN	A	192.168.30.30
 component-images-qa		IN	A	15.125.86.115
-cpbm-jw				IN	A	15.185.94.16
 dad				IN	A	192.168.69.181
 dashkato			IN	A	192.168.69.172
 demo				IN	A	54.245.2.174
@@ -51,39 +43,31 @@ docs				IN	CNAME	api
 dns01				IN	CNAME	ns1
 dns02				IN	CNAME	ns2
 docker				IN	A	15.126.241.145
-docker-external			IN	A	192.168.68.236
 docker-internal			IN	A	15.125.88.29
 downloads			IN	CNAME	api
 expired-no-bundle-ssltest	IN	CNAME	ssltest
 expired-ssltest			IN	CNAME	ssltest
-external			IN	A	15.185.159.9
-*.external			IN	CNAME	external
 eyemac				IN	A	192.168.68.67
 flux				IN	A	192.168.69.83
-fw01				IN	A	192.168.68.1
+fw01				IN	A	192.168.253.254
 gems				IN	CNAME	flux
 get				IN	CNAME	api
 getstarted			IN	CNAME	unbouncepages.com.
 git-mirrors			IN	CNAME	dad
 git-webhook			IN	CNAME	mp
 gitolite			IN	A	192.168.69.8
-hpdemo				IN	A	15.185.160.201
-*.hpdemo			IN	CNAME	hpdemo
-hpdemo-dea1			IN	A	15.185.160.242
-hpdemo-dea2			IN	A	15.185.161.49
-hpdemo-dea3			IN	A	15.185.164.17
+heron				IN	A	192.168.7.231
 hpeac				IN	A	192.168.68.8
 hpehigh				IN	A	192.168.68.9
 hpemid				IN	A	192.168.68.7
-jayv				IN	A	192.168.68.118
 jenkins				IN	A	192.168.69.186
 kopy				IN	CNAME	mp
-kukri				IN	A	192.168.69.232
 kvmbuild			IN	A	192.168.68.109
 lexicon				IN	A	192.168.10.5
 logs				IN	CNAME	api
+lorned-test			IN	A	192.168.69.64
+*.lorned-test			IN	CNAME	lorned-test
 matador				IN	A	192.168.10.8
-menglong			IN	A	192.168.69.2
 mp				IN	A	192.168.10.15
 *.mp				IN	CNAME	mp
 mp-dea1				IN	A	192.168.10.16
@@ -100,7 +84,6 @@ ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4
 opboard				IN	CNAME	api
 openproject			IN	CNAME	api
-oschef				IN	A	192.168.68.190
 oscore				IN	A	192.168.30.1
 osexec1				IN	A	192.168.30.2
 osexec2				IN	A	192.168.30.3
@@ -194,7 +177,7 @@ ostack-247			IN	A	192.168.68.247
 ostack-248			IN	A	192.168.68.248
 ostack-249			IN	A	192.168.68.249
 ostack-250			IN	A	192.168.68.250
-otrs			300	IN	A	52.32.120.164
+otrs				IN	A	52.32.120.164
 qa-get				IN	A	192.168.10.15
 paas				IN	A	192.168.69.172
 *.paas				IN	CNAME	paas
@@ -205,7 +188,6 @@ phone				IN	A	10.10.20.126
 pkg				IN	A	15.126.222.243
 pm01				IN	A	192.168.68.10
 puppetmaster			IN	CNAME	pm01
-razor				IN	A	192.168.69.206
 sandbox-staging			IN	A	50.112.110.164
 *.sandbox-staging		IN	CNAME	sandbox-staging
 seed0				IN	CNAME	downloads.activestate.com.
@@ -214,14 +196,9 @@ seed21				IN	CNAME	d3574wenuy5jyx.cloudfront.net.
 self-signed-ssltest		IN	CNAME	ssltest
 self-signed-expired-ssltest	IN	CNAME	ssltest
 self-signed-wrong-cn-ssltest	IN	CNAME	ssltest
-spike				IN	A	192.168.69.182
 ssltest				IN	A	192.168.69.217
-st-router-1			IN	A	192.168.68.201
-st-router-2			IN	A	192.168.68.202
-st-router-3			IN	A	192.168.68.203
 st-vsphere-cluster		IN	A	192.168.68.200
 *.st-vsphere-cluster		IN	CNAME	st-vsphere-cluster
-stackato.cpbm-jw		IN	A	15.185.95.52
 stackato-ci			IN	A	192.168.68.119
 stackato-image-factory		IN	CNAME	ape
 stackato-nightly		IN	A	192.168.68.111
@@ -242,7 +219,6 @@ telus				IN	A	15.126.255.182
 *.telus				IN	CNAME	telus
 upgrade				IN	CNAME	component-images
 upgrade-internal		IN	A	15.126.232.14
-; upgrade-test			IN	A	192.168.68.225
 valid-no-bundle-ssltest		IN	CNAME	ssltest
 valid-ssltest			IN	CNAME	ssltest
 vcenter				IN	A	192.168.68.120

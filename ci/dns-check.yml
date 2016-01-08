@@ -1,0 +1,9 @@
+---
+platform: linux
+image: docker:///ubuntu#14.04
+
+inputs:
+- name: vnr-configs
+
+run:
+  path: vnr-configs/ci/scripts/dns-check

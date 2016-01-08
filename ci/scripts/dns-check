@@ -1,6 +1,15 @@
 #!/bin/bash
 
 echo 'Installing dnsutils for testing'
-apt-get install dnsutils
+apt-get --yes install dnsutils bind9utils
 
-pwd
+echo 'Linking for testing'
+ln -sf $PWD/vnr-configs/dns01/var/named /var/named
+ln -sf $PWD/vnr-configs/dns01/etc/named /etc/named
+ln -sf $PWD/vnr-configs/dns01/etc/named.conf /etc/named.conf
+ln -sf $PWD/vnr-configs/dns01/etc/named.root.key /etc/named.root.key
+ln -sf $PWD/vnr-configs/dns01/etc/named.rndc.key /etc/named.rndc.key
+ln -sf $PWD/vnr-configs/dns01/etc/named.rfc1912.zones /etc/named.rfc1912.zones
+
+echo 'Checking configuration'
+/usr/sbin/named-checkconf /etc/named.conf

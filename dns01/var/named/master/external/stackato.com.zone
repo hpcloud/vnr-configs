@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015122200	; serial
+				2016010700	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -37,7 +37,7 @@ npm			IN	A	15.125.88.210
 ns1			IN	A	204.244.11.130
 ns2			IN	A	204.244.11.131
 opboard			IN	CNAME	api
-openproject		IN	CNAME	api
+openproject		IN	CNAME	ec2.stacktest.io.
 otrs			IN	A	52.32.120.164
 pkg			IN	A	15.126.222.243
 upgrade			IN	CNAME	component-images

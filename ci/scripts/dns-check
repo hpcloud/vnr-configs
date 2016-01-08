@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo 'Installing dnsutils for testing'
 apt-get install dnsutils
 
 pwd

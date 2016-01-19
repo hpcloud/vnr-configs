@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016010800	; serial
+				2016011400	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -24,7 +24,7 @@ demo			IN	A	54.245.2.174
 *.demo			IN	CNAME	demo
 docker			IN	A	15.126.241.145
 docker-internal		IN	A	15.125.88.29
-docs			IN	CNAME	ec2.stacktest.io.
+docs			IN	CNAME	prod.stacktest.io.
 downloads		IN	CNAME	api
 gems			IN	A	204.244.11.130
 get			IN	CNAME	api

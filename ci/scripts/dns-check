@@ -1,6 +1,31 @@
 #!/bin/bash
 
-echo 'Installing dnsutils for testing'
-apt-get install dnsutils
+echo '******* Installing dnsutils for testing'
+apt-get --yes install dnsutils bind9utils
 
-pwd
+echo '******* Linking for testing'
+ln -sf $PWD/vnr-configs/dns01/var/named /var/named
+ln -sf $PWD/vnr-configs/dns01/etc/named /etc/named
+ln -sf $PWD/vnr-configs/dns01/etc/named.conf /etc/named.conf
+ln -sf $PWD/vnr-configs/dns01/etc/named.root.key /etc/named.root.key
+ln -sf $PWD/vnr-configs/dns01/etc/rndc.key /etc/rndc.key
+ln -sf $PWD/vnr-configs/dns01/etc/named.rfc1912.zones /etc/named.rfc1912.zones
+
+echo '******* Checking configuration'
+/usr/sbin/named-checkconf /etc/named.conf
+if [ $? != 0 ]; then
+  echo 'FAILED CHECK 1'
+  exit $?
+fi
+
+echo '******* Checking zones'
+dir=/var/named/master/internal
+for i in $(ls $dir); do
+  zone=`echo $i | sed '$s/\(.\{5\}\)$//'`
+  echo $zone
+  /usr/sbin/named-checkzone $zone $dir/$i
+  if [ $? != 0 ]; then
+    echo 'FAILED CHECK $zone'
+    exit $?
+  fi
+done

@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016012500	; serial
+				2016012501	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -59,6 +59,7 @@ heron				IN	A	192.168.7.231
 hpeac				IN	A	192.168.68.8
 hpehigh				IN	A	192.168.68.9
 hpemid				IN	A	192.168.68.7
+hpetop				IN	A	192.168.68.11
 jenkins				IN	A	192.168.69.186
 kopy				IN	CNAME	mp
 kvmbuild			IN	A	192.168.68.109

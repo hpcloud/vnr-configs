@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016011400	; serial
+				2016012500	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -20,7 +20,6 @@ aok				IN	CNAME	api
 ape				IN	A	192.168.68.112
 api				IN	A	15.125.91.96
 aszero1				IN	A	192.168.0.3
-aszero2				IN	A	192.168.0.5
 backups01			IN	A	192.168.68.27
 beta				IN	CNAME	unbouncepages.com.
 bzr				IN	CNAME	gitolite
@@ -72,7 +71,6 @@ mp				IN	A	192.168.10.15
 *.mp				IN	CNAME	mp
 mp-dea1				IN	A	192.168.10.16
 mp-dea2				IN	A	192.168.10.17
-mp-host				IN	A	192.168.10.14
 muse				IN	A	192.168.68.132
 nas2				IN	A	192.168.69.204
 *.nas2				IN	CNAME	nasweb
@@ -84,10 +82,10 @@ ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4
 opboard				IN	CNAME	api
 openproject			IN	CNAME	ec2.stacktest.io.
-oscore				IN	A	192.168.30.1
-osexec1				IN	A	192.168.30.2
-osexec2				IN	A	192.168.30.3
-osexec3				IN	A	192.168.30.4
+oscore1				IN	A	192.168.68.216
+oscore2				IN	A	192.168.68.217
+osexec1				IN	A	192.168.68.218
+osexec2				IN	A	192.168.68.219
 osfloat01			IN	A	192.168.30.5
 *.osfloat01			IN	CNAME	osfloat01
 osfloat02			IN	A	192.168.30.6
@@ -157,6 +155,11 @@ ostack-221			IN	A	192.168.68.221
 ostack-223			IN	A	192.168.68.223
 ostack-224			IN	A	192.168.68.224
 ostack-225			IN	A	192.168.68.225
+ostack-226			IN	A	192.168.68.226
+ostack-227			IN	A	192.168.68.227
+ostack-228			IN	A	192.168.68.228
+ostack-229			IN	A	192.168.68.229
+ostack-230			IN	A	192.168.68.230
 ostack-231			IN	A	192.168.68.231
 ostack-232			IN	A	192.168.68.232
 ostack-233			IN	A	192.168.68.233
@@ -204,11 +207,6 @@ stackato-image-factory		IN	CNAME	ape
 stackato-nightly		IN	A	192.168.68.111
 stackato-nightly-vsphere	IN	A	192.168.68.138
 *.stackato-nightly-vsphere	IN	CNAME	stackato-nightly-vsphere
-stackato-pkg-custom		IN	A	192.168.68.230
-stackato-pkg-gen-inner		IN	A	192.168.68.228
-stackato-pkg-gen-outer		IN	A	192.168.68.226
-stackato-pkg-test-inner		IN	A	192.168.68.229
-stackato-pkg-test-outer		IN	A	192.168.68.227
 stackato-xen			IN	A	192.168.68.127
 stackatoaws			IN	A	50.19.222.182
 *.stackatoaws			IN	CNAME	stackatoaws

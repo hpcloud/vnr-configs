@@ -1,7 +1,7 @@
 $ORIGIN 10.168.192.in-addr.arpa.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root (
-				2015122200	; serial
+				2016012500	; serial
 				3H		; refresh
 				15M		; retry
 				1W		; expiry
@@ -23,7 +23,7 @@ $TTL	86400
 11	IN	PTR	unknown.stackato.com.
 12	IN	PTR	unknown.stackato.com.
 13	IN	PTR	unknown.stackato.com.
-14	IN	PTR	mp-host.stackato.com.
+14	IN	PTR	unknown.stackato.com.
 15	IN	PTR	mp.stackato.com.
 16	IN	PTR	mp-dea1.stackato.com.
 17	IN	PTR	mp-dea2.stackato.com.

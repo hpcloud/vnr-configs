@@ -1,7 +1,7 @@
 $ORIGIN	stacktest.io.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2015122200      ; serial
+				2016012700      ; serial
 				600		; refresh
 				300		; retry
 				600		; expire
@@ -15,7 +15,7 @@ deadmo		IN	A	15.125.113.10
 *.deadmo	IN	CNAME	deadmo
 demo		IN	A	15.126.230.82
 *.demo		IN	CNAME	demo
-ec2		IN	A	52.88.100.110
+ec2		IN	A	52.25.144.154
 *.ec2		IN	CNAME	ec2
 *.elbtest	IN	CNAME	jamesf-test-1738665776.us-east-1.elb.amazonaws.com.
 helion		IN	A	15.126.217.24

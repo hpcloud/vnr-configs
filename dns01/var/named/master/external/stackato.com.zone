@@ -24,7 +24,7 @@ demo			IN	A	54.245.2.174
 *.demo			IN	CNAME	demo
 docker			IN	A	15.126.241.145
 docker-internal		IN	A	15.125.88.29
-docs			IN	CNAME	prod.stacktest.io.
+docs			IN	CNAME	api
 downloads		IN	CNAME	api
 gems			IN	A	204.244.11.130
 get			IN	CNAME	api

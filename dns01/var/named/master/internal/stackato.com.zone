@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020100	; serial
+				2016020101	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -187,6 +187,7 @@ paas				IN	A	192.168.69.172
 *.paas				IN	CNAME	paas
 paas-host			IN	A	192.168.69.158
 paas2-dea			IN	A	192.168.69.176
+patches				IN	A	54.231.176.187
 phoenix				IN	A	192.168.69.205
 phone				IN	A	10.10.20.126
 pkg				IN	A	15.126.222.243

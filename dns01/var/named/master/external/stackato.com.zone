@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016011400	; serial
+				2016020100	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -13,7 +13,7 @@ $TTL	86400
 	IN	TXT	"v=spf1 ip4:52.32.120.164 include:_spf.google.com ~all"
 
 aok			IN	CNAME	api
-api			IN	A	15.125.91.96
+api			IN	A	52.25.144.154
 beta			IN	CNAME	unbouncepages.com.
 clientftp		IN	A	204.244.11.130
 clientupload		IN	A	204.244.11.130

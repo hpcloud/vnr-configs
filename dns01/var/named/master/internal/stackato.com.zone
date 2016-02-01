@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020102	; serial
+				2016020103	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -16,9 +16,7 @@ addons				IN	CNAME	paas
 addons-nightly			IN	CNAME	paas
 akucloud			IN	A	192.168.69.166
 antelope			IN	A	192.168.68.193
-aok				IN	CNAME	api
 ape				IN	A	192.168.68.112
-api				IN	A	52.25.144.154
 aszero1				IN	A	192.168.0.3
 backups01			IN	A	192.168.68.27
 beta				IN	CNAME	unbouncepages.com.
@@ -38,19 +36,19 @@ dashkato			IN	A	192.168.69.172
 demo				IN	A	54.245.2.174
 *.demo				IN	CNAME	demo
 dhcp01				IN	A	192.168.68.5
-docs				IN	CNAME	api
+docs				IN	CNAME	52.25.144.154
 dns01				IN	CNAME	ns1
 dns02				IN	CNAME	ns2
 docker				IN	A	15.184.139.62
 docker-internal			IN	A	15.184.139.67
-downloads			IN	CNAME	api
+downloads			IN	CNAME	52.25.144.154
 expired-no-bundle-ssltest	IN	CNAME	ssltest
 expired-ssltest			IN	CNAME	ssltest
 eyemac				IN	A	192.168.68.67
 flux				IN	A	192.168.69.83
 fw01				IN	A	192.168.253.254
 gems				IN	CNAME	flux
-get				IN	CNAME	api
+get				IN	CNAME	52.25.144.154
 getstarted			IN	CNAME	unbouncepages.com.
 git-mirrors			IN	CNAME	dad
 git-webhook			IN	CNAME	mp
@@ -64,7 +62,6 @@ jenkins				IN	A	192.168.69.186
 kopy				IN	CNAME	mp
 kvmbuild			IN	A	192.168.68.109
 lexicon				IN	A	192.168.10.5
-logs				IN	CNAME	api
 lorned-test			IN	A	192.168.69.64
 *.lorned-test			IN	CNAME	lorned-test
 matador				IN	A	192.168.10.8
@@ -81,7 +78,6 @@ november			IN	A	192.168.10.4
 npm				IN	A	15.125.88.210
 ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4
-opboard				IN	CNAME	api
 openproject			IN	CNAME	ec2.stacktest.io.
 oscore1				IN	A	192.168.68.216
 oscore2				IN	A	192.168.68.217
@@ -236,7 +232,6 @@ vstest0				IN	A	192.168.68.130
 *.vstest0			IN	CNAME	vstest0
 vstest1				IN	A	192.168.68.131
 *.vstest1			IN	CNAME	vstest1
-welcome				IN	CNAME	api
 wrong-cn-no-bundle-ssltest	IN	CNAME	ssltest
 wrong-cn-ssltest		IN	CNAME	ssltest
 www				IN	CNAME	stackato.com.

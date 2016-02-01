@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020102	; serial
+				2016020103	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -12,8 +12,6 @@ $TTL	86400
 	IN	A	54.231.184.219
 	IN	TXT	"v=spf1 ip4:52.32.120.164 include:_spf.google.com ~all"
 
-aok			IN	CNAME	api
-api			IN	A	52.25.144.154
 beta			IN	CNAME	unbouncepages.com.
 clientftp		IN	A	204.244.11.130
 clientupload		IN	A	204.244.11.130
@@ -24,23 +22,20 @@ demo			IN	A	54.245.2.174
 *.demo			IN	CNAME	demo
 docker			IN	A	15.184.139.62
 docker-internal		IN	A	15.184.139.67
-docs			IN	CNAME	api
-downloads		IN	CNAME	api
+docs			IN	A	52.25.144.154
+downloads		IN	A	52.25.144.154
 gems			IN	A	204.244.11.130
-get			IN	CNAME	api
+get			IN	A	52.25.144.154
 getstarted		IN	CNAME	unbouncepages.com.
 github-notify		IN	A	204.244.11.131
-logs			IN	CNAME	api
 mp			IN	A	204.244.11.132
 *.mp			IN	CNAME	mp
 npm			IN	A	15.125.88.210
 ns1			IN	A	204.244.11.130
 ns2			IN	A	204.244.11.131
-opboard			IN	CNAME	api
 openproject		IN	CNAME	ec2.stacktest.io.
 otrs			IN	A	52.32.120.164
 pkg			IN	A	15.126.222.243
 upgrade			IN	CNAME	component-images
 upgrade-internal	IN	A	15.126.232.14
-welcome			IN	CNAME	api
 www			IN	CNAME	stackato.com.

@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020100	; serial
+				2016020102	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -17,13 +17,13 @@ api			IN	A	52.25.144.154
 beta			IN	CNAME	unbouncepages.com.
 clientftp		IN	A	204.244.11.130
 clientupload		IN	A	204.244.11.130
-component-images	IN	A	15.125.95.221
-component-images-ci	IN	A	15.125.101.109
+component-images	IN	A	15.184.139.59
+component-images-ci	IN	A	15.184.139.63
 component-images-qa	IN	A	15.125.86.115
 demo			IN	A	54.245.2.174
 *.demo			IN	CNAME	demo
-docker			IN	A	15.126.241.145
-docker-internal		IN	A	15.125.88.29
+docker			IN	A	15.184.139.62
+docker-internal		IN	A	15.184.139.67
 docs			IN	CNAME	api
 downloads		IN	CNAME	api
 gems			IN	A	204.244.11.130

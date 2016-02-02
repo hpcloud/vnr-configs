@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020103	; serial
+				2016020200	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -16,7 +16,9 @@ addons				IN	CNAME	paas
 addons-nightly			IN	CNAME	paas
 akucloud			IN	A	192.168.69.166
 antelope			IN	A	192.168.68.193
+aok				IN	A	52.25.144.154
 ape				IN	A	192.168.68.112
+api				IN	A	52.25.144.154
 aszero1				IN	A	192.168.0.3
 backups01			IN	A	192.168.68.27
 beta				IN	CNAME	unbouncepages.com.

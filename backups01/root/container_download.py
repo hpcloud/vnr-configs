@@ -1,16 +1,26 @@
-#!/usr/bin/python -tt
+#!/usr/local/bin/python2.7 -tt
 # vim: set ts=4 sw=4 tw=79 et :
 
 from datetime import date, timedelta
+import boto3
+import botocore
 import os
 import subprocess
 
 
 # Global Variables
-debug = False
+debug = True
 backup_directory = '/data/containers'
-containers = ['kato-patch-blob', 'kato-patch-blob-dev']
+containers = ['patches.stackato.com']
 today = date.today()
+client = ''
+
+
+# Make a connection to AWS.
+def make_connection():
+    global client
+    client = boto3.client('s3')
+    return;
 
 
 # Create directory
@@ -24,7 +34,7 @@ def create_directory(container):
                                                       container)
     directory = "%s/%s/%s" % (backup_directory, today.isoformat(), container)
     if not os.path.exists(directory):
-      os.makedirs(directory)
+        os.makedirs(directory)
     return;
 
 
@@ -34,18 +44,22 @@ def create_directory(container):
 def get_container(container):
     directory = "%s/%s/%s" % (backup_directory, today.isoformat(), container)
     if debug: print "get_container: %s" % directory
-    os.chdir(directory)
-    cmd = ('/usr/local/bin/swift'
-           ' --os-auth-url https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/'
-           ' --os-password brBt13xpqs22'
-           ' --os-region-name region-b.geo-1'
-           ' --os-tenant-id 55587226903523'
-           ' --os-tenant-name hpcs@activestate.com-tenant1'
-           ' --os-username build-services'
-           ' -V 2.0 download')
-    cmd = "%s %s" % (cmd, container)
-    if debug: print "get_container: %s" % cmd
-    subprocess.call(cmd, shell=True)
+    try:
+        bucket = client.list_objects(Bucket=container)
+    except botocore.exceptions.ClientError, e:
+        print e
+        print "%s bucket does not exist!" % (container)
+        return;
+    for key in bucket['Contents']:
+        if debug: print key['Key']
+        # Check for directories and create as necessary
+        subdirs = key['Key'].split('/')
+        if len(subdirs) > 1:
+            create_directory("%s/%s" % (container, '/'.join(subdirs[:-1])))
+        # Download the contents
+        file_location = "%s/%s" % (directory, key['Key'])
+        if debug: print file_location
+        client.download_file(container, key['Key'], file_location)
     return;
 
 
@@ -65,13 +79,13 @@ def rotate():
 
 # The main program
 def main():
+    make_connection()
     for container in containers:
         if debug: print "Backing up: %s" % container
         create_directory(container)
         get_container(container)
-    rotate()
+#    rotate()
 
 
 if __name__ == '__main__':
     main()
-

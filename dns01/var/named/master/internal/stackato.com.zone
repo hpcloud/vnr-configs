@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020202	; serial
+				2016020300	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -43,7 +43,7 @@ dns01				IN	CNAME	ns1
 dns02				IN	CNAME	ns2
 docker				IN	A	15.184.139.62
 docker-internal			IN	A	15.184.139.67
-downloads			IN	A	52.25.144.154
+downloads			IN	CNAME	downloads.stackato.com.s3-website-us-west-2.amazonaws.com.
 expired-no-bundle-ssltest	IN	CNAME	ssltest
 expired-ssltest			IN	CNAME	ssltest
 eyemac				IN	A	192.168.68.67

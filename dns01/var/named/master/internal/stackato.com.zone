@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020201	; serial
+				2016020202	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -64,6 +64,7 @@ jenkins				IN	A	192.168.69.186
 kopy				IN	CNAME	mp
 kvmbuild			IN	A	192.168.68.109
 lexicon				IN	A	192.168.10.5
+logs				IN	A	52.25.144.154
 lorned-test			IN	A	192.168.69.64
 *.lorned-test			IN	CNAME	lorned-test
 matador				IN	A	192.168.10.8

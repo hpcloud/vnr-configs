@@ -1,7 +1,7 @@
 $ORIGIN stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020201	; serial
+				2016020202	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -30,6 +30,7 @@ gems			IN	A	204.244.11.130
 get			IN	A	52.25.144.154
 getstarted		IN	CNAME	unbouncepages.com.
 github-notify		IN	A	204.244.11.131
+logs			IN	A	52.25.144.154
 mp			IN	A	204.244.11.132
 *.mp			IN	CNAME	mp
 npm			IN	A	15.184.139.68

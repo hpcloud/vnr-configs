@@ -1,7 +1,7 @@
 $ORIGIN 68.168.192.in-addr.arpa.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root (
-				2016012500	; serial
+				2016020900	; serial
 				3H		; refresh
 				15M		; retry
 				1W		; expiry
@@ -220,11 +220,11 @@ $TTL	86400
 208	IN	PTR	unknown.stackato.com.
 209	IN	PTR	unknown.stackato.com.
 210	IN	PTR	unknown.stackato.com.
-211	IN	PTR	unknown.stackato.com.
-212	IN	PTR	unknown.stackato.com.
-213	IN	PTR	unknown.stackato.com.
-214	IN	PTR	unknown.stackato.com.
-215	IN	PTR	unknown.stackato.com.
+211	IN	PTR	osneutron.stackato.com.
+212	IN	PTR	osnova.stackato.com.
+213	IN	PTR	osglance.stackato.com.
+214	IN	PTR	oscinder.stackato.com.
+215	IN	PTR	oskeystone.stackato.com.
 216	IN	PTR	oscore1.stackato.com.
 217	IN	PTR	oscore2.stackato.com.
 218	IN	PTR	osexec1.stackato.com.

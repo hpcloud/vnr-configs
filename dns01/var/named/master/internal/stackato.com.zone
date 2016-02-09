@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016020301	; serial
+				2016020900	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -82,6 +82,7 @@ npm				IN	A	15.184.139.68
 ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4
 openproject			IN	CNAME	ec2.stacktest.io.
+oscinder			IN	A	192.168.68.214
 oscore1				IN	A	192.168.68.216
 oscore2				IN	A	192.168.68.217
 osexec1				IN	A	192.168.68.218
@@ -150,6 +151,10 @@ osfloat31			IN	A	192.168.30.35
 *.osfloat31			IN	CNAME	osfloat31
 osfloat32			IN	A	192.168.30.36
 *.osfloat32			IN	CNAME	osfloat32
+osglance			IN	A	192.168.68.213
+oskeystone			IN	A	192.168.68.215
+osneutron			IN	A	192.168.68.211
+osnova				IN	A	192.168.68.212
 ostack-220			IN	A	192.168.68.220
 ostack-221			IN	A	192.168.68.221
 ostack-223			IN	A	192.168.68.223

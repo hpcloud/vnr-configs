@@ -141,9 +141,18 @@ def get_container(container):
             continue
         if check_local("%s/%s" % (container, key['Key'])):
             if debug: print "%s exists locally, checking..." % key['Key']
-            s3sum = s3_md5sum(key['Key'], container)
+            s3sum = key['ETag'][1:-1]
+            if debug: print "S3 md5sum: %s" % s3sum
             if '-' in s3sum:
-                localsum = local_s3sum(key['Key'], container)
+                blocksize = (int(int((int(key['Size']) /
+                                      int(s3sum.split('-')[-1]))
+                                      / 1048576) + 1) * 1048576)
+                if (blocksize == 13631488 or blocksize == 14680064):
+                    # For some reason, many files calculate a 13MB/14MB
+                    # blocksize but it is really transferred at 15MB blocksize
+                    blocksize = 15728640
+                if debug: print "Blocksize: %s" % blocksize
+                localsum = local_s3sum(key['Key'], container, blocksize)
             else:
                 localsum = local_md5sum(key['Key'], container)
             if s3sum == localsum:
@@ -201,9 +210,9 @@ def local_md5sum(object_name, container):
 # S3 md5sum of local file
 # This will calculate the S3 checksum of a local file.
 # Useful in cases where S3 has not done a standard md5sum.
-def local_s3sum(object_name, container):
+def local_s3sum(object_name, container, blocksize):
     global debug, backup_directory, latest
-    blocksize = 15728640 # this assumes 15MB upload blocks
+#    blocksize = 15728640 # this assumes 15MB upload blocks
     block_count = 0
     md5string = ""
     filehandle = open("%s/%s/%s/%s" % (backup_directory, latest, container,
@@ -241,19 +250,6 @@ def rotate():
             cmd = "rm -rf %s" % directory
             subprocess.call(cmd, shell=True)
     return;
-
-
-# S3 md5sum
-# Calculate and return the checksum of an S3 object
-def s3_md5sum(object_name, container):
-    global debug, client
-    try:
-        md5sum = client.head_object(Bucket=container,
-                                    Key=object_name)['ETag'][1:-1]
-    except botocore.exceptions.ClientError:
-        md5sum = ''
-    if debug: print "S3 md5sum: %s" % md5sum
-    return md5sum;
 
 
 # The main program

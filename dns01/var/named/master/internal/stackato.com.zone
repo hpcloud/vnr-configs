@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016021000	; serial
+				2016021600	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -152,6 +152,7 @@ osfloat31			IN	A	192.168.30.35
 osfloat32			IN	A	192.168.30.36
 *.osfloat32			IN	CNAME	osfloat32
 osglance			IN	A	192.168.68.213
+oshorizon			IN	A	192.168.68.210
 oskeystone			IN	A	192.168.68.215
 osneutron			IN	A	192.168.68.211
 osnova				IN	A	192.168.68.212

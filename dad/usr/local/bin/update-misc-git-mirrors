@@ -1,0 +1,44 @@
+#!/bin/bash
+
+for i in howeyc/fsnotify \
+         heroku/heroku-buildpack-clojure \
+         heroku/heroku-buildpack-scala \
+         heroku/heroku-buildpack-java \
+         heroku/heroku-buildpack-play \
+         heroku/heroku-buildpack-python \
+         ingydotnet/test-more-bash \
+         ingydotnet/test-tap-bash \
+         ingydotnet/bashplus \
+         ingydotnet/json-bash \
+         docker/docker \
+         docker/docker-py \
+         docker/docker-registry \
+         fsouza/go-dockerclient \
+         gorilla/context \
+         gorilla/mux \
+         kr/pty \
+         apcera/nats \
+         sstephenson/rbenv \
+         sstephenson/ruby-build \
+         dcarley/rbenv-sudo \
+         isaacs/node-semver \
+         owlient/phpredis \
+         radar/gmail \
+         yaoweibin/ngx_http_substitutions_filter_module \
+         ncb000gt/node.bcrypt.js \
+         agentzh/chunkin-nginx-module \
+         agentzh/echo-nginx-module \
+         chaoslawful/lua-nginx-module \
+         gnosek/nginx-upstream-fair \
+         intridea/grape \
+         rtomayko/posix-spawn \
+         simpl/ngx_devel_kit \
+         vkholodkov/nginx-upload-module \
+         vube/depman \
+         nu7hatch/gouuid \
+         vmihailenco/redis
+do
+  cd /data/git-mirrors/github.com/${i}.git; echo -n "${i} "; pwd; git remote update; git update-server-info;
+done
+
+#         dotcloud/tar \

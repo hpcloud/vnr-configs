@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd /data/git-mirrors/github.com/cloudfoundry/errors.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/cf-uaa-lib.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/vcap-common.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/cloud_controller_ng.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/common.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/heroku-buildpack-nodejs.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/heroku-buildpack-ruby.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/govendor.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/java-buildpack.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/uaa.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/vcap-java.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/warden.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/stager-client.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/steno.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/vcap-concurrency.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/vcap-services-base.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/vcap.git; git remote update; git update-server-info
+cd /data/git-mirrors/github.com/cloudfoundry/gosteno.git; git remote update; git update-server-info
+

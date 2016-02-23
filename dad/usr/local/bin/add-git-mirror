@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ -z "${1}" ]
+then
+    echo "The git URI of the repo to be mirrored must be the first argument"
+    exit 1
+fi
+
+set -e
+set -x
+
+cd /data/git-mirrors
+
+basename=$(basename $1)
+reponame=${basename%.*}
+
+git clone --mirror $1
+
+pushd $basename
+git update-server-info 
+git fetch
+git log --pretty=oneline --abbrev-commit
+popd
+
+chown -R www-data:www-data $basename
+

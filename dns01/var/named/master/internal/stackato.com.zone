@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016021900	; serial
+				2016022500	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -187,6 +187,7 @@ ostack-248			IN	A	192.168.68.248
 ostack-249			IN	A	192.168.68.249
 ostack-250			IN	A	192.168.68.250
 osswift				IN	A	192.168.68.209
+*.osswift			IN	CNAME	osswift
 otrs				IN	A	52.32.120.164
 qa-get				IN	A	192.168.10.15
 paas				IN	A	192.168.69.172

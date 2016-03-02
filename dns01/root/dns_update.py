@@ -176,7 +176,7 @@ def run_cmd(caller, cmd):
 
 # Sync directories.
 def sync_dir(source, target):
-    cmd = "/usr/bin/rsync -aq %s %s" % (source, target)
+    cmd = "/usr/bin/rsync -aq --delete %s %s" % (source, target)
     return run_cmd("sync_dir", cmd);
 
 

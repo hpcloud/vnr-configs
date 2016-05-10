@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016042200	; serial
+				2016045100	; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -78,7 +78,7 @@ nas2				IN	A	192.168.69.204
 nasweb				IN	A	192.168.68.66
 *.nas				IN	CNAME	nasweb
 november			IN	A	192.168.10.4
-npm				IN	A	15.184.139.68
+npm				IN	CNAME	registry.npmjs.org
 ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4
 openproject			IN	CNAME	ec2.stacktest.io.

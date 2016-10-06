@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2016051003      ; serial
+				2016100601      ; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -37,6 +37,7 @@ dad				IN	A	192.168.69.181
 dashkato			IN	A	192.168.69.172
 demo				IN	A	54.245.2.174
 *.demo				IN	CNAME	demo
+dev				IN	CNAME	d1w8y98mfl4l0c.cloudfront.net.
 dhcp01				IN	A	192.168.68.5
 docs				IN	A	52.25.144.154
 dns01				IN	CNAME	ns1
@@ -200,6 +201,7 @@ phone				IN	A	10.10.20.126
 pkg				IN	A	15.126.222.243
 pm01				IN	A	192.168.68.10
 puppetmaster			IN	CNAME	pm01
+release				IN	CNAME	d3c9ade73vmfcx.cloudfront.net.
 sandbox-staging			IN	A	50.112.110.164
 *.sandbox-staging		IN	CNAME	sandbox-staging
 seed0				IN	CNAME	downloads.activestate.com.

@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2017011701      ; serial
+				2017011800      ; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -45,14 +45,38 @@ dns02				IN	CNAME	ns2
 docker				IN	A	52.39.41.232
 docker-internal			IN	A	52.39.41.232
 downloads			IN	CNAME	downloads.stackato.com.s3-website-us-west-2.amazonaws.com.
-esxi-60-node1			IN	A	192.168.68.121
-esxi-60-node2			IN	A	193.168.68.122
-esxi-60-node3			IN	A	193.168.68.123
-esxi-60-node4			IN	A	193.168.68.124
-esxi-60-node5			IN	A	193.168.68.125
-esxi-60-node6			IN	A	193.168.68.126
-esxi-60-node7			IN	A	193.168.68.127
-esxi-60-node8			IN	A	193.168.68.128
+esxi-60-node1-port1 IN A 192.168.69.111
+esxi-60-node1-port2 IN A 192.168.69.121
+esxi-60-node1-port3 IN A 192.168.69.131
+esxi-60-node1-port4 IN A 192.168.69.141
+esxi-60-node2-port1 IN A 192.168.69.112
+esxi-60-node2-port2 IN A 192.168.69.122
+esxi-60-node2-port3 IN A 192.168.69.132
+esxi-60-node2-port4 IN A 192.168.69.142
+esxi-60-node3-port1 IN A 192.168.69.113
+esxi-60-node3-port2 IN A 192.168.69.123
+esxi-60-node3-port3 IN A 192.168.69.133
+esxi-60-node3-port4 IN A 192.168.69.143
+esxi-60-node4-port1 IN A 192.168.69.114
+esxi-60-node4-port2 IN A 192.168.69.124
+esxi-60-node4-port3 IN A 192.168.69.134
+esxi-60-node4-port4 IN A 192.168.69.144
+esxi-60-node5-port1 IN A 192.168.69.115
+esxi-60-node5-port2 IN A 192.168.69.125
+esxi-60-node5-port3 IN A 192.168.69.135
+esxi-60-node5-port4 IN A 192.168.69.145
+esxi-60-node6-port1 IN A 192.168.69.116
+esxi-60-node6-port2 IN A 192.168.69.126
+esxi-60-node6-port3 IN A 192.168.69.136
+esxi-60-node6-port4 IN A 192.168.69.146
+esxi-60-node7-port1 IN A 192.168.69.117
+esxi-60-node7-port2 IN A 192.168.69.127
+esxi-60-node7-port3 IN A 192.168.69.137
+esxi-60-node7-port4 IN A 192.168.69.147
+esxi-60-node8-port1 IN A 192.168.69.118
+esxi-60-node8-port2 IN A 192.168.69.128
+esxi-60-node8-port3 IN A 192.168.69.138
+esxi-60-node8-port4 IN A 192.168.69.148
 expired-no-bundle-ssltest	IN	CNAME	ssltest
 expired-ssltest			IN	CNAME	ssltest
 eyemac				IN	A	192.168.68.67
@@ -245,7 +269,7 @@ vpn01				IN	A	192.168.68.6
 vpool04				IN	A	192.168.68.144
 vpool06				IN	A	192.168.68.146
 vpool07				IN	A	192.168.68.145
-vsphere-60			IN	A	192.168.68.120
+vsphere-60    IN	CNAME esxi-60-node1-port4
 vstest0				IN	A	192.168.68.130
 *.vstest0			IN	CNAME	vstest0
 vstest1				IN	A	192.168.68.131

@@ -110,7 +110,6 @@ nas2				IN	A	192.168.69.204
 *.nas2				IN	CNAME	nasweb
 nasweb				IN	A	192.168.68.66
 *.nas				IN	CNAME	nasweb
-november			IN	A	192.168.10.4
 npm				IN	CNAME	ec2-52-37-57-51.us-west-2.compute.amazonaws.com.
 ns1				IN	A	192.168.68.3
 ns2				IN	A	192.168.68.4

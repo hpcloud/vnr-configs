@@ -13,7 +13,7 @@ $TTL	86400
 1	IN	PTR	unknown.stackato.com.
 2	IN	PTR	unknown.stackato.com.
 3	IN	PTR	unknown.stackato.com.
-4	IN	PTR	november.stackato.com.
+4	IN	PTR	unknown.stackato.com.
 5	IN	PTR	lexicon.stackato.com.
 6	IN	PTR	circuit.stackato.com.
 7	IN	PTR	unknown.stackato.com.

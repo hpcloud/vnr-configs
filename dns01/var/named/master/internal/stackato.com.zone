@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2017012001      ; serial
+				2017012002      ; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire
@@ -467,3 +467,13 @@ dhcp-69-107			IN	A	192.168.69.107
 dhcp-69-108			IN	A	192.168.69.108
 dhcp-69-109			IN	A	192.168.69.109
 dhcp-69-110			IN	A	192.168.69.110
+static-69-170			IN	A	192.168.69.170
+static-69-171			IN	A	192.168.69.171
+static-69-172			IN	A	192.168.69.172
+static-69-173			IN	A	192.168.69.173
+static-69-174			IN	A	192.168.69.174
+static-69-175			IN	A	192.168.69.175
+static-69-176			IN	A	192.168.69.176
+static-69-177			IN	A	192.168.69.177
+static-69-178			IN	A	192.168.69.178
+static-69-179			IN	A	192.168.69.179

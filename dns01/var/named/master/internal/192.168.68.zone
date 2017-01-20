@@ -1,7 +1,7 @@
 $ORIGIN 68.168.192.in-addr.arpa.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root (
-				2016021900	; serial
+				2017012001	; serial
 				3H		; refresh
 				15M		; retry
 				1W		; expiry

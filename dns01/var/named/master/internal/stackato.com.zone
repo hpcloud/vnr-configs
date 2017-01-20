@@ -1,7 +1,7 @@
 $ORIGIN	stackato.com.
 $TTL	86400
 @	IN	SOA	ns1.stackato.com.	root	(
-				2017011803      ; serial
+				2017012001      ; serial
 				3H		; refresh
 				15		; retry
 				1w		; expire

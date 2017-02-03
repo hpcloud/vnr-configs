@@ -42,8 +42,8 @@ dhcp01				IN	A	192.168.68.5
 docs				IN	A	52.25.144.154
 dns01				IN	CNAME	ns1
 dns02				IN	CNAME	ns2
-docker				IN	A	52.39.41.232
-docker-internal			IN	A	52.39.41.232
+docker				IN	A	52.38.17.5
+docker-internal			IN	A	52.38.17.5
 downloads			IN	CNAME	downloads.stackato.com.s3-website-us-west-2.amazonaws.com.
 esxi-60-node1-port1 IN A 192.168.69.111
 esxi-60-node1-port2 IN A 192.168.69.121
